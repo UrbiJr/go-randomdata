@@ -109,11 +109,11 @@ func GenerateProfile(gender int) *Profile {
 	)
 
 	profile.Email = strings.ToLower(profile.Name.First) + "." + strings.ToLower(profile.Name.Last) + "@example.com"
-	profile.Cell = PhoneNumber()
-	profile.Phone = PhoneNumber()
+	profile.Nat = "US"
+	profile.Cell = PhoneNumber(profile.Nat)
+	profile.Phone = PhoneNumber(profile.Nat)
 	profile.Dob = FullDate()
 	profile.Registered = FullDate()
-	profile.Nat = "US"
 
 	profile.Location.City = City()
 	i, _ := strconv.Atoi(PostalCode("US"))
