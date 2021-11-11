@@ -91,6 +91,7 @@ var jsonData = jsonContent{}
 var privateRand *pRand
 
 func init() {
+	rand.Seed(time.Now().UnixNano())
 	privateRand = &pRand{rand.New(rand.NewSource(time.Now().UnixNano())), &sync.Mutex{}}
 	jsonData = jsonContent{}
 
